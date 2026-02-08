@@ -39,6 +39,8 @@
             exitToolStripMenuItem = new ToolStripMenuItem();
             helpToolStripMenuItem = new ToolStripMenuItem();
             aboutToolStripMenuItem = new ToolStripMenuItem();
+            killBtn = new Button();
+            listView1 = new ListView();
             contextMenuStrip1.SuspendLayout();
             menuStrip1.SuspendLayout();
             SuspendLayout();
@@ -74,21 +76,21 @@
             // runToolStripMenuItem
             // 
             runToolStripMenuItem.Name = "runToolStripMenuItem";
-            runToolStripMenuItem.Size = new Size(180, 22);
+            runToolStripMenuItem.Size = new Size(95, 22);
             runToolStripMenuItem.Text = "Run";
             runToolStripMenuItem.Click += runToolStripMenuItem_Click;
             // 
             // killToolStripMenuItem
             // 
             killToolStripMenuItem.Name = "killToolStripMenuItem";
-            killToolStripMenuItem.Size = new Size(180, 22);
+            killToolStripMenuItem.Size = new Size(95, 22);
             killToolStripMenuItem.Text = "Kill";
             killToolStripMenuItem.Click += killToolStripMenuItem_Click;
             // 
             // exitToolStripMenuItem
             // 
             exitToolStripMenuItem.Name = "exitToolStripMenuItem";
-            exitToolStripMenuItem.Size = new Size(180, 22);
+            exitToolStripMenuItem.Size = new Size(95, 22);
             exitToolStripMenuItem.Text = "Exit";
             exitToolStripMenuItem.Click += exitToolStripMenuItem_Click;
             // 
@@ -102,14 +104,35 @@
             // aboutToolStripMenuItem
             // 
             aboutToolStripMenuItem.Name = "aboutToolStripMenuItem";
-            aboutToolStripMenuItem.Size = new Size(107, 22);
+            aboutToolStripMenuItem.Size = new Size(180, 22);
             aboutToolStripMenuItem.Text = "About";
+            aboutToolStripMenuItem.Click += aboutToolStripMenuItem_Click;
+            // 
+            // killBtn
+            // 
+            killBtn.Location = new Point(569, 498);
+            killBtn.Name = "killBtn";
+            killBtn.Size = new Size(75, 23);
+            killBtn.TabIndex = 2;
+            killBtn.Text = "Kill process";
+            killBtn.UseVisualStyleBackColor = true;
+            killBtn.Click += killBtn_Click;
+            // 
+            // listView1
+            // 
+            listView1.Location = new Point(0, 27);
+            listView1.Name = "listView1";
+            listView1.Size = new Size(652, 465);
+            listView1.TabIndex = 3;
+            listView1.UseCompatibleStateImageBehavior = false;
             // 
             // sysman
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
             ClientSize = new Size(652, 529);
+            Controls.Add(listView1);
+            Controls.Add(killBtn);
             Controls.Add(menuStrip1);
             FormBorderStyle = FormBorderStyle.FixedSingle;
             Icon = (Icon)resources.GetObject("$this.Icon");
@@ -117,6 +140,7 @@
             MaximizeBox = false;
             Name = "sysman";
             Text = "System Manager";
+            Load += sysman_Load;
             contextMenuStrip1.ResumeLayout(false);
             menuStrip1.ResumeLayout(false);
             menuStrip1.PerformLayout();
@@ -135,5 +159,7 @@
         private ToolStripMenuItem helpToolStripMenuItem;
         private ToolStripMenuItem aboutToolStripMenuItem;
         private ToolStripMenuItem killProcessToolStripMenuItem;
+        private Button killBtn;
+        private ListView listView1;
     }
 }
