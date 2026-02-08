@@ -31,6 +31,7 @@
             components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(sysman));
             contextMenuStrip1 = new ContextMenuStrip(components);
+            killProcessToolStripMenuItem = new ToolStripMenuItem();
             menuStrip1 = new MenuStrip();
             fileToolStripMenuItem = new ToolStripMenuItem();
             runToolStripMenuItem = new ToolStripMenuItem();
@@ -38,7 +39,6 @@
             exitToolStripMenuItem = new ToolStripMenuItem();
             helpToolStripMenuItem = new ToolStripMenuItem();
             aboutToolStripMenuItem = new ToolStripMenuItem();
-            killProcessToolStripMenuItem = new ToolStripMenuItem();
             contextMenuStrip1.SuspendLayout();
             menuStrip1.SuspendLayout();
             SuspendLayout();
@@ -47,7 +47,13 @@
             // 
             contextMenuStrip1.Items.AddRange(new ToolStripItem[] { killProcessToolStripMenuItem });
             contextMenuStrip1.Name = "contextMenuStrip1";
-            contextMenuStrip1.Size = new Size(181, 48);
+            contextMenuStrip1.Size = new Size(134, 26);
+            // 
+            // killProcessToolStripMenuItem
+            // 
+            killProcessToolStripMenuItem.Name = "killProcessToolStripMenuItem";
+            killProcessToolStripMenuItem.Size = new Size(133, 22);
+            killProcessToolStripMenuItem.Text = "Kill process";
             // 
             // menuStrip1
             // 
@@ -68,22 +74,23 @@
             // runToolStripMenuItem
             // 
             runToolStripMenuItem.Name = "runToolStripMenuItem";
-            runToolStripMenuItem.Size = new Size(95, 22);
+            runToolStripMenuItem.Size = new Size(180, 22);
             runToolStripMenuItem.Text = "Run";
             runToolStripMenuItem.Click += runToolStripMenuItem_Click;
             // 
             // killToolStripMenuItem
             // 
             killToolStripMenuItem.Name = "killToolStripMenuItem";
-            killToolStripMenuItem.Size = new Size(95, 22);
+            killToolStripMenuItem.Size = new Size(180, 22);
             killToolStripMenuItem.Text = "Kill";
             killToolStripMenuItem.Click += killToolStripMenuItem_Click;
             // 
             // exitToolStripMenuItem
             // 
             exitToolStripMenuItem.Name = "exitToolStripMenuItem";
-            exitToolStripMenuItem.Size = new Size(95, 22);
+            exitToolStripMenuItem.Size = new Size(180, 22);
             exitToolStripMenuItem.Text = "Exit";
+            exitToolStripMenuItem.Click += exitToolStripMenuItem_Click;
             // 
             // helpToolStripMenuItem
             // 
@@ -97,12 +104,6 @@
             aboutToolStripMenuItem.Name = "aboutToolStripMenuItem";
             aboutToolStripMenuItem.Size = new Size(107, 22);
             aboutToolStripMenuItem.Text = "About";
-            // 
-            // killProcessToolStripMenuItem
-            // 
-            killProcessToolStripMenuItem.Name = "killProcessToolStripMenuItem";
-            killProcessToolStripMenuItem.Size = new Size(180, 22);
-            killProcessToolStripMenuItem.Text = "Kill process";
             // 
             // sysman
             // 

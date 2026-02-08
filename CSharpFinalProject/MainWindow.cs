@@ -22,5 +22,10 @@ namespace CSharpFinalProject
             ProcKill form = new ProcKill();
             form.Show();
         }
+
+        private void exitToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            Close();
+        }
     }
 }
