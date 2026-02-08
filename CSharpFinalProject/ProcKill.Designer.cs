@@ -31,7 +31,7 @@
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(ProcKill));
             label1 = new Label();
             CancelBtn = new Button();
-            textBox1 = new TextBox();
+            ProcName = new TextBox();
             label2 = new Label();
             OKBtn = new Button();
             pictureBox1 = new PictureBox();
@@ -40,7 +40,7 @@
             // 
             // label1
             // 
-            label1.Location = new Point(65, 12);
+            label1.Location = new Point(65, 19);
             label1.Name = "label1";
             label1.Size = new Size(302, 50);
             label1.TabIndex = 0;
@@ -54,13 +54,14 @@
             CancelBtn.TabIndex = 1;
             CancelBtn.Text = "Cancel";
             CancelBtn.UseVisualStyleBackColor = true;
+            CancelBtn.Click += CancelBtn_Click;
             // 
-            // textBox1
+            // ProcName
             // 
-            textBox1.Location = new Point(56, 72);
-            textBox1.Name = "textBox1";
-            textBox1.Size = new Size(311, 23);
-            textBox1.TabIndex = 2;
+            ProcName.Location = new Point(56, 72);
+            ProcName.Name = "ProcName";
+            ProcName.Size = new Size(311, 23);
+            ProcName.TabIndex = 2;
             // 
             // label2
             // 
@@ -79,6 +80,7 @@
             OKBtn.TabIndex = 5;
             OKBtn.Text = "OK";
             OKBtn.UseVisualStyleBackColor = true;
+            OKBtn.Click += OKBtn_Click;
             // 
             // pictureBox1
             // 
@@ -98,7 +100,7 @@
             Controls.Add(pictureBox1);
             Controls.Add(OKBtn);
             Controls.Add(label2);
-            Controls.Add(textBox1);
+            Controls.Add(ProcName);
             Controls.Add(CancelBtn);
             Controls.Add(label1);
             FormBorderStyle = FormBorderStyle.FixedDialog;
@@ -117,7 +119,7 @@
 
         private Label label1;
         private Button CancelBtn;
-        private TextBox textBox1;
+        private TextBox ProcName;
         private Label label2;
         private Button OKBtn;
         private PictureBox pictureBox1;

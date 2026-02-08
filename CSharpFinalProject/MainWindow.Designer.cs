@@ -38,13 +38,16 @@
             exitToolStripMenuItem = new ToolStripMenuItem();
             helpToolStripMenuItem = new ToolStripMenuItem();
             aboutToolStripMenuItem = new ToolStripMenuItem();
+            killProcessToolStripMenuItem = new ToolStripMenuItem();
+            contextMenuStrip1.SuspendLayout();
             menuStrip1.SuspendLayout();
             SuspendLayout();
             // 
             // contextMenuStrip1
             // 
+            contextMenuStrip1.Items.AddRange(new ToolStripItem[] { killProcessToolStripMenuItem });
             contextMenuStrip1.Name = "contextMenuStrip1";
-            contextMenuStrip1.Size = new Size(61, 4);
+            contextMenuStrip1.Size = new Size(181, 48);
             // 
             // menuStrip1
             // 
@@ -65,21 +68,21 @@
             // runToolStripMenuItem
             // 
             runToolStripMenuItem.Name = "runToolStripMenuItem";
-            runToolStripMenuItem.Size = new Size(180, 22);
+            runToolStripMenuItem.Size = new Size(95, 22);
             runToolStripMenuItem.Text = "Run";
             runToolStripMenuItem.Click += runToolStripMenuItem_Click;
             // 
             // killToolStripMenuItem
             // 
             killToolStripMenuItem.Name = "killToolStripMenuItem";
-            killToolStripMenuItem.Size = new Size(180, 22);
+            killToolStripMenuItem.Size = new Size(95, 22);
             killToolStripMenuItem.Text = "Kill";
             killToolStripMenuItem.Click += killToolStripMenuItem_Click;
             // 
             // exitToolStripMenuItem
             // 
             exitToolStripMenuItem.Name = "exitToolStripMenuItem";
-            exitToolStripMenuItem.Size = new Size(180, 22);
+            exitToolStripMenuItem.Size = new Size(95, 22);
             exitToolStripMenuItem.Text = "Exit";
             // 
             // helpToolStripMenuItem
@@ -95,6 +98,12 @@
             aboutToolStripMenuItem.Size = new Size(107, 22);
             aboutToolStripMenuItem.Text = "About";
             // 
+            // killProcessToolStripMenuItem
+            // 
+            killProcessToolStripMenuItem.Name = "killProcessToolStripMenuItem";
+            killProcessToolStripMenuItem.Size = new Size(180, 22);
+            killProcessToolStripMenuItem.Text = "Kill process";
+            // 
             // sysman
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
@@ -107,6 +116,7 @@
             MaximizeBox = false;
             Name = "sysman";
             Text = "System Manager";
+            contextMenuStrip1.ResumeLayout(false);
             menuStrip1.ResumeLayout(false);
             menuStrip1.PerformLayout();
             ResumeLayout(false);
@@ -123,5 +133,6 @@
         private ToolStripMenuItem exitToolStripMenuItem;
         private ToolStripMenuItem helpToolStripMenuItem;
         private ToolStripMenuItem aboutToolStripMenuItem;
+        private ToolStripMenuItem killProcessToolStripMenuItem;
     }
 }
