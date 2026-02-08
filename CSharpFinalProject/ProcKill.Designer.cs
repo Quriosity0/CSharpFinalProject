@@ -31,6 +31,8 @@
             label1 = new Label();
             button1 = new Button();
             textBox1 = new TextBox();
+            pictureBox1 = new PictureBox();
+            ((System.ComponentModel.ISupportInitialize)pictureBox1).BeginInit();
             SuspendLayout();
             // 
             // label1
@@ -44,7 +46,7 @@
             // 
             // button1
             // 
-            button1.Location = new Point(290, 146);
+            button1.Location = new Point(277, 131);
             button1.Name = "button1";
             button1.Size = new Size(75, 23);
             button1.TabIndex = 1;
@@ -58,17 +60,27 @@
             textBox1.Size = new Size(100, 23);
             textBox1.TabIndex = 2;
             // 
+            // pictureBox1
+            // 
+            pictureBox1.Location = new Point(140, 26);
+            pictureBox1.Name = "pictureBox1";
+            pictureBox1.Size = new Size(100, 50);
+            pictureBox1.TabIndex = 3;
+            pictureBox1.TabStop = false;
+            // 
             // ProcKill
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
             ClientSize = new Size(379, 166);
+            Controls.Add(pictureBox1);
             Controls.Add(textBox1);
             Controls.Add(button1);
             Controls.Add(label1);
             Name = "ProcKill";
             Text = "ProcKill";
             Load += ProcKill_Load;
+            ((System.ComponentModel.ISupportInitialize)pictureBox1).EndInit();
             ResumeLayout(false);
             PerformLayout();
         }
@@ -78,5 +90,6 @@
         private Label label1;
         private Button button1;
         private TextBox textBox1;
+        private PictureBox pictureBox1;
     }
 }
