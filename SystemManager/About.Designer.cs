@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(About));
             pictureBox1 = new PictureBox();
             label1 = new Label();
             linkLabel1 = new LinkLabel();
@@ -36,6 +37,7 @@
             // 
             // pictureBox1
             // 
+            pictureBox1.Image = SystemManager.Properties.Resources.sysmon;
             pictureBox1.Location = new Point(149, 12);
             pictureBox1.Name = "pictureBox1";
             pictureBox1.Size = new Size(70, 70);
@@ -72,6 +74,7 @@
             Controls.Add(label1);
             Controls.Add(pictureBox1);
             FormBorderStyle = FormBorderStyle.FixedSingle;
+            Icon = (Icon)resources.GetObject("$this.Icon");
             Name = "About";
             Text = "About";
             ((System.ComponentModel.ISupportInitialize)pictureBox1).EndInit();
