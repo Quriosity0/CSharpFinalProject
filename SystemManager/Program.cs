@@ -9,7 +9,7 @@ namespace CSharpFinalProject
         static void Main()
         {
             ApplicationConfiguration.Initialize();
-            Application.Run(new sysman());
+            Application.Run(new SysMan());
         }
     }
 }

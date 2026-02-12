@@ -5,9 +5,9 @@ using System.Runtime.InteropServices;
 
 namespace CSharpFinalProject
 {
-    public partial class sysman : Form
+    public partial class SysMan : Form
     {
-        public sysman()
+        public SysMan()
         {
             InitializeComponent();
         }

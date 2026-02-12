@@ -1,6 +1,6 @@
 ﻿namespace CSharpFinalProject
 {
-    partial class sysman
+    partial class SysMan
     {
         /// <summary>
         ///  Required designer variable.
@@ -29,7 +29,7 @@
         private void InitializeComponent()
         {
             components = new System.ComponentModel.Container();
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(sysman));
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(SysMan));
             contextMenuStrip1 = new ContextMenuStrip(components);
             killProcessToolStripMenuItem = new ToolStripMenuItem();
             menuStrip1 = new MenuStrip();
@@ -163,7 +163,7 @@
             cpuLabel.TabIndex = 4;
             cpuLabel.Text = "CPU: 0.0%";
             // 
-            // sysman
+            // SysMan
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
@@ -176,7 +176,7 @@
             Icon = (Icon)resources.GetObject("$this.Icon");
             MainMenuStrip = menuStrip1;
             MaximizeBox = false;
-            Name = "sysman";
+            Name = "SysMan";
             Text = "System Manager";
             Load += sysman_Load;
             contextMenuStrip1.ResumeLayout(false);
