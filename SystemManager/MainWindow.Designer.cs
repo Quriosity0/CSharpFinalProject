@@ -30,9 +30,9 @@
         {
             components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(SysMan));
-            contextMenuStrip1 = new ContextMenuStrip(components);
+            contextMenu = new ContextMenuStrip(components);
             killProcessToolStripMenuItem = new ToolStripMenuItem();
-            menuStrip1 = new MenuStrip();
+            TopMenu = new MenuStrip();
             fileToolStripMenuItem = new ToolStripMenuItem();
             runToolStripMenuItem = new ToolStripMenuItem();
             killToolStripMenuItem = new ToolStripMenuItem();
@@ -43,18 +43,20 @@
             ProcList = new ListView();
             ProcName = new ColumnHeader();
             PID = new ColumnHeader();
+            CPU = new ColumnHeader();
             Mem = new ColumnHeader();
             Threads = new ColumnHeader();
             cpuLabel = new Label();
-            contextMenuStrip1.SuspendLayout();
-            menuStrip1.SuspendLayout();
+            UpdateTimer = new System.Windows.Forms.Timer(components);
+            contextMenu.SuspendLayout();
+            TopMenu.SuspendLayout();
             SuspendLayout();
             // 
-            // contextMenuStrip1
+            // contextMenu
             // 
-            contextMenuStrip1.Items.AddRange(new ToolStripItem[] { killProcessToolStripMenuItem });
-            contextMenuStrip1.Name = "contextMenuStrip1";
-            contextMenuStrip1.Size = new Size(134, 26);
+            contextMenu.Items.AddRange(new ToolStripItem[] { killProcessToolStripMenuItem });
+            contextMenu.Name = "contextMenuStrip1";
+            contextMenu.Size = new Size(134, 26);
             // 
             // killProcessToolStripMenuItem
             // 
@@ -62,14 +64,14 @@
             killProcessToolStripMenuItem.Size = new Size(133, 22);
             killProcessToolStripMenuItem.Text = "Kill process";
             // 
-            // menuStrip1
+            // TopMenu
             // 
-            menuStrip1.Items.AddRange(new ToolStripItem[] { fileToolStripMenuItem, helpToolStripMenuItem });
-            menuStrip1.Location = new Point(0, 0);
-            menuStrip1.Name = "menuStrip1";
-            menuStrip1.Size = new Size(652, 24);
-            menuStrip1.TabIndex = 1;
-            menuStrip1.Text = "menuStrip1";
+            TopMenu.Items.AddRange(new ToolStripItem[] { fileToolStripMenuItem, helpToolStripMenuItem });
+            TopMenu.Location = new Point(0, 0);
+            TopMenu.Name = "TopMenu";
+            TopMenu.Size = new Size(652, 24);
+            TopMenu.TabIndex = 1;
+            TopMenu.Text = "menuStrip1";
             // 
             // fileToolStripMenuItem
             // 
@@ -125,7 +127,7 @@
             // 
             // ProcList
             // 
-            ProcList.Columns.AddRange(new ColumnHeader[] { ProcName, PID, Mem, Threads });
+            ProcList.Columns.AddRange(new ColumnHeader[] { ProcName, PID, CPU, Mem, Threads });
             ProcList.FullRowSelect = true;
             ProcList.GridLines = true;
             ProcList.Location = new Point(0, 27);
@@ -138,12 +140,16 @@
             // ProcName
             // 
             ProcName.Text = "Name";
-            ProcName.Width = 250;
+            ProcName.Width = 200;
             // 
             // PID
             // 
             PID.Text = "PID";
             PID.Width = 70;
+            // 
+            // CPU
+            // 
+            CPU.Text = "CPU (%)";
             // 
             // Mem
             // 
@@ -171,25 +177,23 @@
             Controls.Add(cpuLabel);
             Controls.Add(ProcList);
             Controls.Add(killBtn);
-            Controls.Add(menuStrip1);
-            FormBorderStyle = FormBorderStyle.FixedSingle;
+            Controls.Add(TopMenu);
             Icon = (Icon)resources.GetObject("$this.Icon");
-            MainMenuStrip = menuStrip1;
-            MaximizeBox = false;
+            MainMenuStrip = TopMenu;
             Name = "SysMan";
             Text = "System Manager";
             Load += sysman_Load;
-            contextMenuStrip1.ResumeLayout(false);
-            menuStrip1.ResumeLayout(false);
-            menuStrip1.PerformLayout();
+            contextMenu.ResumeLayout(false);
+            TopMenu.ResumeLayout(false);
+            TopMenu.PerformLayout();
             ResumeLayout(false);
             PerformLayout();
         }
 
         #endregion
 
-        private ContextMenuStrip contextMenuStrip1;
-        private MenuStrip menuStrip1;
+        private ContextMenuStrip contextMenu;
+        private MenuStrip TopMenu;
         private ToolStripMenuItem fileToolStripMenuItem;
         private ToolStripMenuItem runToolStripMenuItem;
         private ToolStripMenuItem killToolStripMenuItem;
@@ -204,5 +208,7 @@
         private ColumnHeader Mem;
         private ColumnHeader Threads;
         private Label cpuLabel;
+        private System.Windows.Forms.Timer UpdateTimer;
+        private ColumnHeader CPU;
     }
 }
