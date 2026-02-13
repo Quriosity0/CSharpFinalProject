@@ -87,8 +87,8 @@ namespace CSharpFinalProject
             UpdateTimer.Tick += (s, e) =>
             {
                 UpdateList();
-                MeasureSystemLoad();
             };
+            MeasureSystemLoad();
             UpdateTimer.Start();
         }
 
