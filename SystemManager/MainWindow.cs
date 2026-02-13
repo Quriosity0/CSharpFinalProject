@@ -68,17 +68,21 @@ namespace CSharpFinalProject
         }
         private async void MeasureSystemLoad() 
         {
-            var cpuCounter = new PerformanceCounter("Processor", "% Processor Time", "_Total");
-
-            cpuCounter.NextValue();
-            await Task.Delay(500);
-
-            while (true)
+            try
             {
-                float cpuUsage = cpuCounter.NextValue();
-                cpuLabel.Text = $"CPU: {cpuUsage:F2}%";
-                await Task.Delay(1000);
+                var cpuCounter = new PerformanceCounter("Processor", "% Processor Time", "_Total");
+
+                cpuCounter.NextValue();
+                await Task.Delay(500);
+
+                while (true)
+                {
+                    float cpuUsage = cpuCounter.NextValue();
+                    cpuLabel.Text = $"CPU: {cpuUsage:F2}%";
+                    await Task.Delay(1000);
+                }
             }
+            catch { }
         }
 
         private void sysman_Load(object sender, EventArgs e)
